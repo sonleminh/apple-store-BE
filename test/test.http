@@ -1,0 +1,100 @@
+GET http://localhost:3000/api/user/1
+
+###
+
+GET http://localhost:4000/api/product/2
+
+###
+
+GET http://localhost:4000/api/products
+
+
+###
+GET http://localhost:4000/api/product/ipad
+
+###
+POST http://localhost:4000/api/product
+Content-Type: application/json
+
+{
+    "name": "iPhone 14 Pro Max",
+    "description": "7.0 inch, 128 GB",
+    "price": 1500000,
+    "discountPrice": 1500000,
+    "quantity": "5"
+}
+
+###
+
+PATCH http://localhost:4000/api/product/30
+Content-Type: application/json
+
+{
+    "name": "iPhone 14 Pro Max c",
+    "description": "7.0 inch, 128 GB",
+    "quantity": 2,
+    "status": "sale"
+    
+}
+
+###
+DELETE http://localhost:3000/api/products/13
+
+###
+//Test Model
+
+GET http://localhost:3000/api/models
+
+###
+
+GET http://localhost:3000/api/models/2
+
+###
+POST http://localhost:3000/api/models
+Content-Type: application/json
+
+{
+    "name": "iPhone 6",
+    "categoryId": "1"
+}
+
+###
+
+PATCH http://localhost:3000/api/models/1
+Content-Type: application/json
+
+{
+    "name": "iPhone Xs, Xs Max",
+    "categoryId": 1
+}
+
+###
+DELETE http://localhost:3000/api/user/4
+//Test Category
+
+###
+GET http://localhost:3000/api/category
+
+###
+
+GET http://localhost:3000/api/categories/2
+
+###
+POST http://localhost:3000/api/category
+Content-Type: application/json
+
+{
+    "name": "Accessory"
+}
+
+###
+
+PATCH http://localhost:3000/api/categories/2
+Content-Type: application/json
+
+{
+    "name": "iPad"
+}
+
+###
+DELETE http://localhost:3000/api/categories/3

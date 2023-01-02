@@ -1,0 +1,46 @@
+POST http://localhost:4000/api/login
+Content-Type: application/json
+
+{
+    "firstName": "test",
+    "email": "test@gmail.com",
+    "password": "123123"
+}
+
+
+###
+
+GET http://localhost:4000/api/users
+
+###
+
+GET http://localhost:3000/api/user/1
+
+###
+POST http://localhost:3000/api/user
+Content-Type: application/json
+
+{
+    "firstName": "Son",
+    "lastName": "Le",
+    "email": "sonlele@gmail.com",
+    "password": "123123",
+}
+
+###
+
+PATCH http://localhost:3000/api/user/14
+Content-Type: application/json
+
+{
+    "name": "iPhone 14 Pro Max",
+    "description": "7.0 inch, 128 GB",
+    "quantity": 5,
+    "status": "sale",
+    "url": "https://firebasestorage.googleapis.com/v0/b/apple-store-39b14.appspot.com/o/iPhone-14-Pro-Max.jpg?alt=media&token=014082ce-a940-4478-87d4-2a46fea817e6",
+    "modelId": 2
+    
+}
+
+###
+DELETE http://localhost:4000/api/user/11
