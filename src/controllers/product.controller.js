@@ -4,7 +4,7 @@ const prisma = require('../models/prisma');
 const getProducts = async (req, res, next) => {
   try {
     const products = await prisma.product.findMany({
-      include: { model: true, options: true },
+      include: { model: true },
     });
     res.json(products);
   } catch (error) {
@@ -21,7 +21,12 @@ const getProduct = async (req, res, next) => {
       where: {
         id: Number(id),
       },
-      include: { model: true },
+      include: {
+        model: true,
+        description: true,
+        specifications: true,
+        color: true,
+      },
     });
     res.json(products);
   } catch (error) {
@@ -36,7 +41,6 @@ const getSaleProduct = async (req, res, next) => {
       where: {
         status: { has: 'sale' },
       },
-      // include: { model: true },
     });
     res.json(products);
   } catch (error) {
@@ -46,14 +50,22 @@ const getSaleProduct = async (req, res, next) => {
 
 const getIPhoneProduct = async (req, res, next) => {
   try {
-    // const { id } = req.params;
     const products = await prisma.product.findMany({
       where: {
         model: {
           categoryId: 1,
         },
       },
-      include: { model: true },
+      include: {
+        description: true,
+        specifications: true,
+        color: true,
+        model: {
+          include: {
+            category: true,
+          },
+        },
+      },
     });
     res.json(products);
   } catch (error) {
@@ -63,14 +75,22 @@ const getIPhoneProduct = async (req, res, next) => {
 
 const getIpadProduct = async (req, res, next) => {
   try {
-    // const { id } = req.params;
     const products = await prisma.product.findMany({
       where: {
         model: {
           categoryId: 2,
         },
       },
-      include: { model: true },
+      include: {
+        description: true,
+        specifications: true,
+        color: true,
+        model: {
+          include: {
+            category: true,
+          },
+        },
+      },
     });
     res.json(products);
   } catch (error) {
@@ -150,6 +170,24 @@ const deleteProduct = async (req, res, next) => {
   }
 };
 
+const search = async (req, res, next) => {
+  const { q } = req.query;
+  console.log(q);
+  try {
+    const products = await prisma.product.findMany({
+      where: {
+        name: {
+          contains: q,
+          mode: 'insensitive',
+        },
+      },
+    });
+    res.json(products);
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   getProducts,
   getProduct,
@@ -159,4 +197,5 @@ module.exports = {
   createProduct,
   updateProduct,
   deleteProduct,
+  search,
 };

@@ -12,7 +12,7 @@ const getCategories = async (req, res, next) => {
   }
 };
 
-const getCategory = async (req, res, next) => {
+const getCategoryId = async (req, res, next) => {
   try {
     const { id } = req.params;
     const category = await prisma.category.findUnique({
@@ -72,7 +72,7 @@ const deleteCategory = async (req, res, next) => {
 
 module.exports = {
   getCategories,
-  getCategory,
+  getCategoryId,
   createCategory,
   updateCategory,
   deleteCategory,

@@ -19,7 +19,16 @@ const getModel = async (req, res, next) => {
       where: {
         id: Number(id),
       },
-      include: { category: true },
+      include: {
+        category: { include: { model: true } },
+        products: {
+          include: {
+            description: true,
+            specifications: true,
+            color: true,
+          },
+        },
+      },
     });
     res.json(model);
   } catch (error) {

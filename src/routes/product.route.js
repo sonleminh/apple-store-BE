@@ -7,15 +7,16 @@ const {
   getSaleProduct,
   getIPhoneProduct,
   getIpadProduct,
+  search,
 } = require('../controllers/product.controller');
 
 const route = require('express').Router();
 
-route.get('/product/sale', getSaleProduct);
+route.get('/sale', getSaleProduct);
 
-route.get('/product/iphone', getIPhoneProduct);
+route.get('/iphone', getIPhoneProduct);
 
-route.get('/product/ipad', getIpadProduct);
+route.get('/ipad', getIpadProduct);
 
 route.get('/products', getProducts);
 
@@ -26,5 +27,7 @@ route.get('/product/:id', getProduct);
 route.patch('/product/:id', updateProduct);
 
 route.delete('/product/:id', deleteProduct);
+
+route.get('/search', search);
 
 module.exports = route;

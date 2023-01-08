@@ -10,12 +10,12 @@ const route = require('express').Router();
 
 route.get('/models', getModels);
 
-route.get('/models/:id', getModel);
+route.get('/model/:id', getModel);
 
-route.post('/models', createModel);
+route.post('/model', createModel);
 
-route.patch('/models/:id', updateModel);
+route.patch('/model/:id', updateModel);
 
-route.delete('/models/:id', deleteModel);
+route.delete('/model/:id', deleteModel);
 
 module.exports = route;

@@ -5,12 +5,13 @@ GET http://localhost:3000/api/user/1
 GET http://localhost:4000/api/product/2
 
 ###
-
 GET http://localhost:4000/api/products
 
+###
+GET http://localhost:4000/api/sale
 
 ###
-GET http://localhost:4000/api/product/ipad
+GET http://localhost:4000/api/ipad
 
 ###
 POST http://localhost:4000/api/product
@@ -47,7 +48,7 @@ GET http://localhost:3000/api/models
 
 ###
 
-GET http://localhost:3000/api/models/2
+GET http://localhost:4000/api/model/1
 
 ###
 POST http://localhost:3000/api/models
@@ -71,14 +72,11 @@ Content-Type: application/json
 ###
 DELETE http://localhost:3000/api/user/4
 //Test Category
+###
+GET http://localhost:4000/api/category
 
 ###
-GET http://localhost:3000/api/category
-
-###
-
-GET http://localhost:3000/api/categories/2
-
+GET http://localhost:4000/api/category/1
 ###
 POST http://localhost:3000/api/category
 Content-Type: application/json
@@ -98,3 +96,5 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:3000/api/categories/3
+###
+GET http://localhost:4000/api/search

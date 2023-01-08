@@ -1,6 +1,6 @@
 const {
   getCategories,
-  getCategory,
+  getCategoryId,
   createCategory,
   updateCategory,
   deleteCategory,
@@ -10,7 +10,7 @@ const route = require('express').Router();
 
 route.get('/category', getCategories);
 
-route.get('/category/:id', getCategory);
+route.get('/categoryid/:id', getCategoryId);
 
 route.post('/category', createCategory);
 
