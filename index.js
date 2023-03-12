@@ -7,6 +7,8 @@ const morgan = require('morgan');
 const dotenv = require('dotenv');
 const productRoute = require('./src/routes/product.route');
 const modelRoute = require('./src/routes/model.route');
+const cartRoute = require('./src/routes/cart.route');
+const orderRoute = require('./src/routes/order.route');
 const categoryRoute = require('./src/routes/category.route');
 const userRoute = require('./src/routes/user.route');
 const imageRoute = require('./src/routes/image.route');
@@ -36,6 +38,8 @@ app.use('/api', productRoute);
 app.use('/api', modelRoute);
 app.use('/api', categoryRoute);
 app.use('/api', userRoute);
+app.use('/api', cartRoute);
+app.use('/api', orderRoute);
 app.use('/api', imageRoute);
 
 app.get('/', (req, res) => {

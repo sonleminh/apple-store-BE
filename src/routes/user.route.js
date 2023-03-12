@@ -6,6 +6,7 @@ const {
   register,
   login,
   getMyProfile,
+  getOrdersByUser,
   logout,
 } = require('../controllers/user.controller');
 const {

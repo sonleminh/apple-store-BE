@@ -18,11 +18,10 @@ POST http://localhost:4000/api/product
 Content-Type: application/json
 
 {
-    "name": "iPhone 14 Pro Max",
-    "description": "7.0 inch, 128 GB",
+    "name": "iPhone Xs 64GB",
     "price": 1500000,
     "discountPrice": 1500000,
-    "quantity": "5"
+    "quantity": 2
 }
 
 ###

@@ -1,10 +1,9 @@
-// const { model } = require('../models/prisma');
 const prisma = require('../models/prisma');
 
 const getProducts = async (req, res, next) => {
   try {
     const products = await prisma.product.findMany({
-      include: { description:true, specifications:true, model: true },
+      include: { description: true, specifications: true, model: true },
     });
     res.json(products);
   } catch (error) {

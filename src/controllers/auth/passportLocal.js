@@ -18,6 +18,7 @@ const initPassportLocal = () => {
             where: {
               email: email,
             },
+            include: { cart: true },
           });
 
           if (!user) return done(null, false);

@@ -1,0 +1,26 @@
+POST http://localhost:4000/api/cart
+Content-Type: application/json
+
+{
+    "userId": 5
+}
+
+###
+// Get Cart Item
+
+POST http://localhost:4000/api/cartitem
+Content-Type: application/json
+
+{
+    "userId": 5
+}
+
+###
+// Add Cart Item
+
+POST http://localhost:4000/api/cartitem
+Content-Type: application/json
+
+{
+    "userId": 5
+}
