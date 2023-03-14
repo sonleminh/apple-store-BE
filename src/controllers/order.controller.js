@@ -17,17 +17,7 @@ const getOrdersByUser = async (req, res, next) => {
   }
 };
 
-const createOrder = async (req, res, next) => {
-  // const { orderItems } = req.body;
-  // console.log(orderItems);
-  // const orderItemList = orderItems?.reduce((array, item) => {
-  //   array.push({
-  //     productId: Number(item.id),
-  //   });
-  //   return array;
-  // }, []);
-  // console.log(orderItemList);
-  try {
+const createOrder = async (req, res, next) => {  try {
     const {
       name,
       phone,
